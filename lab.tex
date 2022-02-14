@@ -1,4 +1,3 @@
-\listfiles
 \documentclass[notitlepage, 12pt, letterpaper, oneside]{report}
 \usepackage[margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
@@ -33,12 +32,12 @@
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		Trial \#
-		  & \multicolumn{1}{|p{4.5cm}|}{\centering Initial Burette Reading               \\ (± 0.05\ml)}
-		  & \multicolumn{1}{|p{4.5cm}|}{\centering Final Burette Reading                 \\ (± 0.05\ml)}
-		  & \multicolumn{1}{|p{3cm}|}{\centering Difference                              \\ (± 0.1\ml)} \\
+		  & \multicolumn{1}{|p{4.5cm}|}{\centering Initial Burette Reading                \\ (± 0.05\ml)}
+		  & \multicolumn{1}{|p{4.5cm}|}{\centering Final Burette Reading                  \\ (± 0.05\ml)}
+		  & \multicolumn{1}{|p{3cm}|}{\centering Difference                               \\ (± 0.1\ml)} \\
 		\hline
-		1 & 20.3                                                           & 26.7 & 6.4  \\ \hline
-		2 & 26.75                                                          & 33.0 & 6.25 \\ \hline
+		1 & 20.3                                                           & 26.75 & 6.45 \\ \hline
+		2 & 26.75                                                          & 33.0  & 6.25 \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -58,7 +57,7 @@ To find the concentration of the potassium iodide, the number of moles of \ce{Na
 \begin{align*}
 	c        & = \frac{n}{V}       \\
 	0.10\mpl & = \frac{n}{6.25\ml} \\
-	n        & = 0.625\ml
+	n        & = 0.625\mmol
 \end{align*}
 
 Calculating the uncertainty of the number of moles:
@@ -75,22 +74,21 @@ The number of moles of \ce{Na2S2O3} can be converted to the number of moles of \
 	\frac{3\mol\ \ce{I2}}{1\mol\ \ce{KIO3}} *
 	\frac{2\mol\ \ce{Na2S2O3}}{1\mol\ \ce{I2}}
 	= 6\mol\ \ce{Na2S2O3}
-	\\
-	(0.625 \pm 0.01)\mmol\ \ce{Na2S2O3} \div 6 = (0.104 \pm 0.002)\mmol\ \ce{KIO3}
 \end{gather*}
 
-Finally, the molar concentration formula is used to calculate the concentration of the \ce{KIO3} solution:
+Then, the above mole ratio is used with the molar concentration formula to calculate the concentration of the \ce{KIO3} solution:
 \begin{align*}
-	c & = \frac{n}{V}                        \\
-	c & = \frac{0.104\mmol\ \ce{KIO3}}{5\ml} \\
+	c & = \frac{n}{V} \\
+	c & = \frac{
+		0.625\mmol\ \ce{Na2S2O3} * \frac{1\mol\ \ce{KIO3}}{6\mol\ \ce{Na2S2O3}}
+	}{5\ml}           \\
 	c & = 0.0208\mpl
 \end{align*}
 
 Calculating the uncertainty of the concentration using ±0.05 mL as the uncertainty of the pipette:
 \begin{align*}
-	\Delta c & = \frac{(0.104 \pm 0.002)\mmol\ \ce{KIO3}}{(5 \pm 0.05)\ml} \\
-	\Delta c & = c * (\frac{0.002}{0.104} + \frac{0.05}{5})                \\
-	\Delta c & = 0.0006\mpl \text{ or } 2.92\%                             \\
+	\Delta c & = c * (\frac{0.01\mmol}{0.625\mmol} + \frac{0.05\ml}{5\ml}) \\
+	\Delta c & = 0.000542\mpl \text{ or } 2.6\%                            \\
 	c        & = 0.0208\mpl \pm 3\%
 \end{align*}
 
@@ -101,16 +99,16 @@ Repeating this calculation for each trial yields the following values:
 	\label{table2}
 	\def\arraystretch{1.5}
 	\centering
-	\begin{tabular}{|l|l|l|l|}
+	\begin{tabular}{|l|l|l|}
 		\hline
 		Trial \#
 		  & \multicolumn{1}{|p{4.5cm}|}{\centering Volume of \ce{Na2S2O3}                          \\ (± 0.1\ml)}
 		  & \multicolumn{1}{|p{4.5cm}|}{\centering Concentration of \ce{KIO3}}                     \\
 		\hline
-		1 & 6.4                                                                & 0.0208\mpl\ ± 3\% \\ \hline
-		2 & 6.25                                                               & 0.0213\mpl\ ± 3\% \\ \hline
+		1 & 6.45                                                               & 0.0215\mpl\ ± 3\% \\ \hline
+		2 & 6.25                                                               & 0.0208\mpl\ ± 3\% \\ \hline
 	\end{tabular}
 \end{table}
 
-Averaging the final data gives a final result of $0.0211 \text{ mol L}^{-1} \pm 6\%$.
+Averaging the final data gives a final result of $0.0212 \text{ mol L}^{-1} \pm 6\%$.
 \end{document}
